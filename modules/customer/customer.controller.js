@@ -8,7 +8,7 @@ export const signup = async (req, res) => {
         return res.json({ message: "sorry,Email already Exists" });
     }
     const result = await db.collection('customers').insertOne({ name, password, email, phone, login_status: 0 })
-    res.status(201).json({ message: "Success" }, result)
+    res.status(201).json({ message: "Success", result })
 }
 
 export const signin = async (req, res) => {
